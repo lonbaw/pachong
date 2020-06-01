@@ -1,0 +1,26 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+ <view class="section">
+  <view class="section__title">公司简称</view>
+  <input name="keyword" placeholder="公司简称" />
+ </view>
+
+ <view class="btn-area">
+  <button formType="submit">提交</button>
+  <button formType="reset">重置</button>
+ </view>
+</form>
+<view wx:if="{{isSubmit}}">
+ <view wx:for="{{result}}">
+    <view wx:for="{{item}}">
+    <form bindsubmit="DaochuSubmit" >
+    <input name="cmp_full_name" value="{{item}}">{{item}}</input> <button class="export-table" formType="submit">导出</button>
+   </form>
+   </view>
+    
+   </view>
+   <view wx:if="{{isExport}}">
+   <text selectable='true' class="huanghang">{{file_path}}</text>
+  
+ </view>
+</view>
